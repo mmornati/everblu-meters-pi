@@ -15,13 +15,13 @@
 
 #include "wiringPi.h"
 
-#define METER_YEAR      22
-#define METER_SERIAL    828979
+#define METER_YEAR      23
+#define METER_SERIAL    123456
 
-#define MQTT_HOST   "192.168.1.8"
+#define MQTT_HOST   "127.0.0.1"
 #define MQTT_PORT   1883
-#define MQTT_USER   ""
-#define MQTT_PASS   ""
+#define MQTT_USER   "username"
+#define MQTT_PASS   "password"
 #define MQTT_TOPIC  "everblu/"
 #define MQTT_KEEP_ALIVE     300
 #define MQTT_MSG_MAX_SIZE   512
@@ -29,11 +29,11 @@
 #define REG_DEFAULT 	0x10AF75 // CC1101 register values for 433.82MHz
 #define REG_SCAN_LOOP	     128 // Allow up and dow 128 to REG_DEFAULT while scanning 
 
-#define GDO0        6 // GPIO25
-#define GDO2        3 // GPIO22
+#define GDO0        6 
+#define GDO2        5 
 #define GDO1_MISO   13
 #define MOSI        12
-#define cc1101_CSn  10 // GPIO8 
+#define cc1101_CSn  10  
 
 // CC1101-PI E07 module
 #define LED_RED 4   // GPIO23

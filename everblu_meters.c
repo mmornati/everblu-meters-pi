@@ -320,7 +320,13 @@ int main(int argc, char *argv[])
         #endif
         printf( "Trying to query Cyble at %.4fMHz\n", frequency);
         cc1101_init(frequency, 0, false);
-        meter_data = get_meter_data();
+        int i=0;
+        do {
+	    printf("Reading data...");
+            meter_data = get_meter_data();
+            i++;
+	    sleep(5);
+        } while (i<10 && !meter_data.ok);
         #ifdef LED_RED
         digitalWrite(LED_RED, LOW);
         #endif
